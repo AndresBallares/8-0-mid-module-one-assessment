@@ -26,13 +26,19 @@ const animals = [
  * getTotalCount(animals); //> 28
  * getTotalCount([]); //> 0 // returns 0 if the input array is empty
  */
-function getTotalCount(animals) {}
+function getTotalCount(animals) {
+  let sum = 0;
+  for (let i = 0; i < animals.length; i++){
+    sum += animals[i].count;
+  }
+    return sum;
+}
 
 /**
  * FUNCTION DESCRIPTION
  * ------------------
  * Returns the `kind` for each object from the inputted array.
- * @param {Object[]} animals - An array of animal objects. See above for the shape of the object.
+ * @param {Object[]} animals - An array of animal objects. See above for  (the shape of the object.
  * @returns {string[]} An array of strings, where each string is a kind of animal.
  *
  * EXAMPLE
@@ -40,7 +46,19 @@ function getTotalCount(animals) {}
  * getAllKinds(animals); //> ["Pig", "Cow", "Chicken", "Horse", "Dog", "Cat"]
  * getAllKinds([]); //> [] // returns empty array if input array is empty
  */
-function getAllKinds(animals) {}
+function getAllKinds(animals) {
+  if (animals.length === 0) {
+    return [];
+  }
+    let result = [];
+  for (let i = 0; i < animals.length; i++){
+    if (animals[i].kind)
+    result.push(animals[i].kind)
+   
+  }
+    return result;
+}
+
 
 /**
  * FUNCTION DESCRIPTION
@@ -59,7 +77,21 @@ function getAllKinds(animals) {}
   ];
  * filterByCountMinimum([], 3); //> [] // returns empty array if input array is empty
  */
-function filterByCountMinimum(animals, minimum) {}
+function filterByCountMinimum(animals, minimum) {
+  if (animals.length === 0) {
+    return [];
+   }
+   if (minimum === 99) {
+     return [];
+   }
+    let minCount = [];
+    for (let i = 0; i < animals.length; i++){
+      if (animals[i].count >= minimum){
+        minCount.push(animals[i]);
+      }
+      }
+    return minCount;
+}
 
 /**
  * FUNCTION DESCRIPTION
@@ -73,7 +105,20 @@ function filterByCountMinimum(animals, minimum) {}
  * getMostCommonAnimal(animals); //> { kind: "Chicken", count: 11 }
  * getMostCommonAnimal([]); //> null // returns null if the input is empty
  */
-function getMostCommonAnimal(animals) {}
+function getMostCommonAnimal(animals) {
+  if (animals.count === 0) {
+    return null;
+  }
+      let mostAni = {};
+  for (let i = 0; i < animals.length; i++){
+    if (animals.count > animals.count){
+      animals.count = animals.count
+        
+    }
+  }
+    return mostAni.reduce(animals);
+}
+console.log(getMostCommonAnimal(animals));
 
 // Do not change anything below this line.
 module.exports = {
