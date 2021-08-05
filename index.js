@@ -110,10 +110,10 @@ function getMostCommonAnimal(animals) {
     return null;
   }
     let result = [];
-   let mostAni = animals[0].count
+   let highestCount = animals[0].count;
   for (let i = 0; i < animals.length; i++){
-     if (animals[i].count > mostAni){
-      mostAni = animals[i].count;
+     if (animals[i].count > highestCount){
+      highestCount = animals[i].count;
       result = animals[i];
       
     }
